@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mentu</title>
+  <link href="/assets/images/faviconspark.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="/assets/stylesheets/application.css" media="all" rel="stylesheet" />
+  <script src="/assets/javascripts/application.js"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<header id="main-header">
+  <a href="/">
+    <img alt="Logo" class="logo m-full" src="/assets/images/logo.svg" />
+</a>
+    <div id="main-header-actions-right" class="normal flex-parent">
+
+        <a href="/users/19">
+          <div class="no-mobile current-user-name blue">
+            thomas
+          </div>
+          <img alt="Profileplaceholder" class="current-user-pic m-half no-mobile" src="/assets/profileplaceholder-265738bc0041d7a7da9366f0b39d242e.svg" />
+</a>        <img alt="Menudeskwhite" class="m-half no-mobile menu-arrow svg white" src="/assets/menudeskwhite-89fe4ea30c8ba9c1e4cef6e6c17b40f9.svg" />
+        <img alt="Menudeskblack" class="m-half no-mobile menu-arrow svg black hidden" src="/assets/menudeskblack-e17a4a262515b9e18d4630df0569541a.svg" />
+        <img alt="Menumobile" class="m-full mobile-menu no-desk" src="/assets/menumobile-211999887b61727dee704c7c4fb0087a.svg" />
+        <div id="menu" class="hidden">
+          <a href="/users/19">
+            <div class="menu-item">
+              Profile
+            </div>
+</a>          <a href="/users/19">
+            <div class="menu-item">
+              Rules
+            </div>
+</a>          <a href="/logout">
+            <div class="menu-item">
+              Logout
+            </div>
+</a>        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<div class="signup-overlay-container hidden">
+  <img alt="Close" id="close-modal" src="/assets/close-054725ca1481ab82d610f653f68f4ab3.svg" />
+  <div class="modal-content">
+    <div class="bold p-bottom-very-big big" id="signup-message">注册并开始</div>
+    <div class="p-vert-very-big big">与火花上的小伙伴们一起分享你的故事!</div>
+
+    <div id="signup-content">
+      <div id="signup-buttons">
+        <a href="/auth/facebook">
+          <div class="btn blue-btn sign-up-btn m-vert-big" id="facebook">
+            通过Facebook登陆
+          </div>
+</a><!--        <div class="btn sign-up-btn m-vert-big wechat">
+          Sign up with Wechat
+        </div>
+        <div class="btn sign-up-btn no-mobile wechat">
+          Sign up with Weibo
+        </div> -->
+      </div>
+      <div id="mobile-separator" class="no-desk"></div>
+      <div id="desk-separator" class="no-mobile"></div>
+      <div id="signup-form">
+        <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="9TbXtHJWoKwV2BfrxE/gooxXsCpLeu+wXZy/KH8iZ6Q=" /></div>
+          <input class="signup-field field m-bottom-big" id="user_name" name="user[name]" placeholder="姓名" type="text" />
+          <input class="signup-field field m-vert" id="user_email" name="user[email]" placeholder="邮箱地址" type="email" />
+          <input class="signup-field field m-vert" id="user_password" name="user[password]" placeholder="密码" type="password" />
+          <input class="signup-field field m-vert blue-btn" id="create-user" name="commit" type="submit" value="创建账号" />
+</form>     </div>
+    </div>
+  </div>
+</div>
+
+<div class="login-overlay-container hidden">
+  <img alt="Close" id="close-login" src="/assets/close-054725ca1481ab82d610f653f68f4ab3.svg" />
+  <div class="modal-content">
+    <div class="p-bottom-very-big big">Login</div>
+
+    <div id="signup-content">
+      <div id="signup-buttons">
+        <a href="/auth/facebook">
+          <div class="btn blue-btn sign-up-btn m-vert-big" id="facebook">
+            通过Facebook登录
+          </div>
+</a><!--        <div class="btn sign-up-btn m-vert-big wechat">
+          Login with Wechat
+        </div>
+        <div class="btn sign-up-btn no-mobile wechat">
+          Login with Weibo
+        </div> -->
+      </div>
+      <div id="mobile-separator" class="no-desk"></div>
+      <div id="desk-separator" class="no-mobile login-separator"></div>
+      <div id="signup-form">
+        <form accept-charset="UTF-8" action="/sessions" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="9TbXtHJWoKwV2BfrxE/gooxXsCpLeu+wXZy/KH8iZ6Q=" /></div>
+          <input class="signup-field field m-bottom" id="session_email" name="session[email]" placeholder="邮箱地址" type="text" />
+          <input class="signup-field field m-vert" id="session_password" name="session[password]" placeholder="密码" type="password" />
+          <input class="signup-field field m-vert blue-btn" id="create-user" name="commit" type="submit" value="登录" />
+</form>     </div>
+    </div>
+  </div>
+</div>
+
+  <section id="landing-main" class="signed-in-main">
+    <div id="landing-content">
+      <div class="landing-message">
+        <div class="big m-full bold white">
+          问你所想，答我所能
+        </div>
+        <div class="bigsub m-full white">
+          3每天三位全新导师，<span class="desktop">咨询他们任何你想了解的内容！</span><span class="mobile">答你所问！</span>
+        </div>
+      </div>
+
+
+  </div>
+  </section>
+
+
+<section id="landing-ama">
+  <div id="ama-header">
+    <div id="ama-header-content">
+      <div id="ama-header-tabs" class="flex-parent no-desk bold">
+        <a class="ama-header-link" data-remote="true" href="/amas?category=all">
+          <div class="ama-header-tab active" id="all">
+            全部
+          </div>
+</a>        <a class="ama-header-link" data-remote="true" href="/amas?category=ent">
+          <div class="ama-header-tab" id="ent">
+            创业
+          </div>
+</a>        <a class="ama-header-link" data-remote="true" href="/amas?category=biz">
+          <div class="ama-header-tab" id="biz">
+            金融
+          </div>
+</a>      </div>
+
+      <div id="ama-header-tabs" class="flex-parent no-mobile bold">
+        <a class="ama-header-link" data-remote="true" href="/amas?category=all">
+          <div class="ama-header-tab active" id="all">
+            全部
+          </div>
+</a>        <a class="ama-header-link" data-remote="true" href="/amas?category=ent">
+        <div class="ama-header-tab" id="ent">
+          创业
+        </div>
+</a>        <a class="ama-header-link" data-remote="true" href="/amas?category=biz">
+          <div class="ama-header-tab" id="biz">
+            金融
+          </div>
+</a>
+      </div>
+    </div>
+  </div>
+  <div class="amas-container">
+    <div id="amas-content">
+        <div class="amas-date m-top-very-big title bold">March 13</div>
+  <div class="amas">
+      <a href="/amas/4">
+        <div class="ama m-vert-very-big flex-parent">
+          <div class="ama-left">
+            <img alt="Profileplaceholder" class="ama-pic m-right-big" src="/assets/profileplaceholder-265738bc0041d7a7da9366f0b39d242e.svg" />
+          </div>
+          <div class="ama-main-info p-bottom">
+            <div class="ama-mentor-info bold">我在斯坦福大学念法律专业，目前大二，准备这个暑假加入Cooley LLP 。</div>
+            <div class="ama-sub-info p-vert">
+              我是Rosa Zhou.我热爱辩论，我喜欢狗狗，希望有一天能成为联合国安理会的秘书。欢迎来问我任何事！
+            </div>
+            <div class="ama-recommendations p-vert blue">
+              <span class= "no-desk">Recs:</span><span class= "no-mobile">被这些人推荐:</span>
+
+            </div>
+            <div class="ama-add-info inline-container p-vert grey">
+              <div class="answer-count">
+                <img alt="Answergrey" class="info-icon" src="/assets/answergrey-1b93f75adf9b8dc55806e585e33e3a37.svg" />
+                3 <span class= "no-mobile">回答</span></div>
+                <div class="question-count m-hor-big">
+                  <img alt="Questiongrey" class="info-icon" src="/assets/questiongrey-4e894f47689a9ecfac983bc3785ca2a7.svg" />
+                  4 <span class= "no-mobile">提问</span>
+                </div>
+                <div class="like-count red no-desk">
+                  <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+                  0 <span class= "no-mobile">heat</span>
+                </div>
+
+              </div>
+          </div>
+          <div class="ama-right">
+            <div class="like-count red no-mobile">
+              <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+              0 <span class= "no-mobile">heat</span>
+            </div>
+          </div>
+        </div>
+</a>  </div>
+  <div class="amas-date m-top-very-big title bold">March 12</div>
+  <div class="amas">
+      <a href="/amas/20">
+        <div class="ama m-vert-very-big flex-parent">
+          <div class="ama-left">
+            <img alt="Profileplaceholder" class="ama-pic m-right-big" src="/assets/profileplaceholder-265738bc0041d7a7da9366f0b39d242e.svg" />
+          </div>
+          <div class="ama-main-info p-bottom">
+            <div class="ama-mentor-info bold"></div>
+            <div class="ama-sub-info p-vert">
+
+            </div>
+            <div class="ama-recommendations p-vert blue">
+              <span class= "no-desk">Recs:</span><span class= "no-mobile">被这些人推荐:</span>
+
+            </div>
+            <div class="ama-add-info inline-container p-vert grey">
+              <div class="answer-count">
+                <img alt="Answergrey" class="info-icon" src="/assets/answergrey-1b93f75adf9b8dc55806e585e33e3a37.svg" />
+                0 <span class= "no-mobile">回答</span></div>
+                <div class="question-count m-hor-big">
+                  <img alt="Questiongrey" class="info-icon" src="/assets/questiongrey-4e894f47689a9ecfac983bc3785ca2a7.svg" />
+                  0 <span class= "no-mobile">提问</span>
+                </div>
+                <div class="like-count red no-desk">
+                  <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+                  0 <span class= "no-mobile">heat</span>
+                </div>
+
+              </div>
+          </div>
+          <div class="ama-right">
+            <div class="like-count red no-mobile">
+              <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+              0 <span class= "no-mobile">heat</span>
+            </div>
+          </div>
+        </div>
+</a>  </div>
+  <div class="amas-date m-top-very-big title bold">March 5</div>
+  <div class="amas">
+      <a href="/amas/18">
+        <div class="ama m-vert-very-big flex-parent">
+          <div class="ama-left">
+            <img alt="Profileplaceholder" class="ama-pic m-right-big" src="/assets/profileplaceholder-265738bc0041d7a7da9366f0b39d242e.svg" />
+          </div>
+          <div class="ama-main-info p-bottom">
+            <div class="ama-mentor-info bold"></div>
+            <div class="ama-sub-info p-vert">
+
+            </div>
+            <div class="ama-recommendations p-vert blue">
+              <span class= "no-desk">Recs:</span><span class= "no-mobile">被这些人推荐:</span>
+
+            </div>
+            <div class="ama-add-info inline-container p-vert grey">
+              <div class="answer-count">
+                <img alt="Answergrey" class="info-icon" src="/assets/answergrey-1b93f75adf9b8dc55806e585e33e3a37.svg" />
+                0 <span class= "no-mobile">回答</span></div>
+                <div class="question-count m-hor-big">
+                  <img alt="Questiongrey" class="info-icon" src="/assets/questiongrey-4e894f47689a9ecfac983bc3785ca2a7.svg" />
+                  0 <span class= "no-mobile">提问</span>
+                </div>
+                <div class="like-count red no-desk">
+                  <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+                  0 <span class= "no-mobile">heat</span>
+                </div>
+
+              </div>
+          </div>
+          <div class="ama-right">
+            <div class="like-count red no-mobile">
+              <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+              0 <span class= "no-mobile">heat</span>
+            </div>
+          </div>
+        </div>
+</a>      <a href="/amas/3">
+        <div class="ama m-vert-very-big flex-parent">
+          <div class="ama-left">
+            <img alt="Profileplaceholder" class="ama-pic m-right-big" src="/assets/profileplaceholder-265738bc0041d7a7da9366f0b39d242e.svg" />
+          </div>
+          <div class="ama-main-info p-bottom">
+            <div class="ama-mentor-info bold">我在斯坦福大学念法律专业，目前大二，准备这个暑假加入Cooley LLP 。</div>
+            <div class="ama-sub-info p-vert">
+              我是Rosa Zhou.我热爱辩论，我喜欢狗狗，希望有一天能成为联合国安理会的秘书。欢迎来问我任何事！
+            </div>
+            <div class="ama-recommendations p-vert blue">
+              <span class= "no-desk">Recs:</span><span class= "no-mobile">被这些人推荐:</span>
+
+            </div>
+            <div class="ama-add-info inline-container p-vert grey">
+              <div class="answer-count">
+                <img alt="Answergrey" class="info-icon" src="/assets/answergrey-1b93f75adf9b8dc55806e585e33e3a37.svg" />
+                3 <span class= "no-mobile">回答</span></div>
+                <div class="question-count m-hor-big">
+                  <img alt="Questiongrey" class="info-icon" src="/assets/questiongrey-4e894f47689a9ecfac983bc3785ca2a7.svg" />
+                  3 <span class= "no-mobile">提问</span>
+                </div>
+                <div class="like-count red no-desk">
+                  <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+                  0 <span class= "no-mobile">heat</span>
+                </div>
+
+              </div>
+          </div>
+          <div class="ama-right">
+            <div class="like-count red no-mobile">
+              <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+              0 <span class= "no-mobile">heat</span>
+            </div>
+          </div>
+        </div>
+</a>      <a href="/amas/21">
+        <div class="ama m-vert-very-big flex-parent">
+          <div class="ama-left">
+            <img alt="Profileplaceholder" class="ama-pic m-right-big" src="/assets/profileplaceholder-265738bc0041d7a7da9366f0b39d242e.svg" />
+          </div>
+          <div class="ama-main-info p-bottom">
+            <div class="ama-mentor-info bold">Hi my name is PH I&#39;m asleep</div>
+            <div class="ama-sub-info p-vert">
+              I like to dance and I do stuff and shit.
+            </div>
+            <div class="ama-recommendations p-vert blue">
+              <span class= "no-desk">Recs:</span><span class= "no-mobile">被这些人推荐:</span>
+
+            </div>
+            <div class="ama-add-info inline-container p-vert grey">
+              <div class="answer-count">
+                <img alt="Answergrey" class="info-icon" src="/assets/answergrey-1b93f75adf9b8dc55806e585e33e3a37.svg" />
+                7 <span class= "no-mobile">回答</span></div>
+                <div class="question-count m-hor-big">
+                  <img alt="Questiongrey" class="info-icon" src="/assets/questiongrey-4e894f47689a9ecfac983bc3785ca2a7.svg" />
+                  9 <span class= "no-mobile">提问</span>
+                </div>
+                <div class="like-count red no-desk">
+                  <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+                  0 <span class= "no-mobile">heat</span>
+                </div>
+
+              </div>
+          </div>
+          <div class="ama-right">
+            <div class="like-count red no-mobile">
+              <img alt="Heat" class="info-icon" src="/assets/heat-2250970a15bb101b021a4dd5f4f79d68.svg" />
+              0 <span class= "no-mobile">heat</span>
+            </div>
+          </div>
+        </div>
+</a>  </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  if ($(window).height() < 400) {
+    $('#past-mentors').hide()
+  }
+</script>
+
+  <script>
+    $('#landing-content').css('-webkit-transform', 'translateY(-10%)')
+  </script>
+</body>
+</html>
