@@ -16,6 +16,7 @@ module.exports = (grunt) =>
                 options:
                     sassDir: "sass"
                     cssDir: "build/css/"
+                    environment: 'production'
         coffee:
             compile:
                 options:
