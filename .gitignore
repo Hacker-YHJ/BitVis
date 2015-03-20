@@ -22,3 +22,7 @@ build/**
 # bower
 
 bower_components
+
+#sass
+
+.sass-cache
