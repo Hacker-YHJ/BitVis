@@ -58,9 +58,9 @@ module.exports = (grunt) =>
             "coffee": (path) ->
                 ['newer:coffee']
             "jade": (path) ->
-                ['newer:jade']
+                ['jade']
             "sass": (path) ->
-                ['newer:compass']
+                ['compass']
     grunt.loadNpmTasks 'grunt-contrib-jade'
     grunt.loadNpmTasks 'grunt-contrib-compass'
     grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -68,5 +68,5 @@ module.exports = (grunt) =>
     grunt.loadNpmTasks 'grunt-contrib-connect'
     grunt.loadNpmTasks 'grunt-este-watch'
     grunt.loadNpmTasks 'grunt-newer'
-    grunt.registerTask 'make', ['bower', 'newer:coffee', 'newer:jade', 'compass']
+    grunt.registerTask 'make', ['bower', 'newer:coffee', 'jade', 'compass']
     grunt.registerTask 'default', ['make', 'connect', 'esteWatch']
