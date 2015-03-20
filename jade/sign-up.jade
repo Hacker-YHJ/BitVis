@@ -1,10 +1,18 @@
 extends templates/default.jade
 
+block css
+  link(href='/css/shared.css', rel='stylesheet')
+  link(href='/css/sign_up.css', rel='stylesheet')
+
 block contents
-  form#userSignUp(accept-charset='utf-8')
-    input(type='text')
-    input(type='email')
-    input(type='password')
-    input(type='password')
+  #signUp
+    #signUpContent.center-vertical.center-horizontal
+      .title 注册并开始
+      .subtitle 与火花上的小伙伴们一起分享你的故事!
+      form#userSignUp(accept-charset='utf-8')
+        input(type='text')
+        input(type='email')
+        input(type='password')
+        input(type='submit', value='创建账号')
 
 block js_includes

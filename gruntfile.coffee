@@ -14,7 +14,7 @@ module.exports = (grunt) =>
         compass:
             dist:
                 options:
-                    sassDir: "sass"
+                    sassDir: "sass/export"
                     cssDir: "build/css/"
                     environment: 'production'
         coffee:
@@ -32,14 +32,14 @@ module.exports = (grunt) =>
             install:
                 options:
                     targetDir: 'build/lib'
-                    layout: 'byType'
+                    layout: 'byComponent'
                     install: true
                     cleanTargetDir: true
                     cleanBowerDir: false
         connect:
             server:
                 options:
-                    port: 3000
+                    port: 2333
                     hostname: "*"
                     base: 'build'
                     livereload: 35729
@@ -68,5 +68,5 @@ module.exports = (grunt) =>
     grunt.loadNpmTasks 'grunt-contrib-connect'
     grunt.loadNpmTasks 'grunt-este-watch'
     grunt.loadNpmTasks 'grunt-newer'
-    grunt.registerTask 'make', ['bower', 'newer:coffee', 'newer:jade', 'newer:compass']
+    grunt.registerTask 'make', ['bower', 'newer:coffee', 'newer:jade', 'compass']
     grunt.registerTask 'default', ['make', 'connect', 'esteWatch']
