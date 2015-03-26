@@ -67,7 +67,7 @@ module.exports = (grunt) =>
     grunt.loadNpmTasks 'grunt-bower-task'
     grunt.loadNpmTasks 'grunt-contrib-connect'
     grunt.loadNpmTasks 'grunt-este-watch'
-    grunt.loadNpmTasks 'grunt-newer'
-    grunt.registerTask 'make', ['bower', 'newer:coffee', 'jade', 'compass']
+    grunt.registerTask 'remake', ['bower', 'coffee', 'jade', 'compass']
+    grunt.registerTask 'make', ['coffee', 'jade', 'compass']
     grunt.registerTask 'server', ['connect', 'esteWatch']
-    grunt.registerTask 'default', ['make', 'connect', 'esteWatch']
+    grunt.registerTask 'default', ['remake', 'connect', 'esteWatch']
