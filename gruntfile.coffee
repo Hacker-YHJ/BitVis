@@ -101,6 +101,15 @@ module.exports = (grunt) =>
       dist:
         src: 'img/**'
         dest: 'release/img'
+    clean: [
+      '.sass-cache/**',
+      'bower_components/**',
+      'build/lib/**',
+      'release/lib/**',
+      'node_modules/**',
+      '*.log'
+    ]
+
 
   grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-compass'
@@ -109,6 +118,7 @@ module.exports = (grunt) =>
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-copy'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
 
   grunt.registerTask 'remake', ['bower:install', 'coffee:compile', 'jade:compile', 'compass:compile', 'copy:dev']
   grunt.registerTask 'make', ['coffee:compile', 'jade:compile', 'compass:compile']
