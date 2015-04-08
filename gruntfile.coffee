@@ -26,12 +26,14 @@ module.exports = (grunt) =>
         options:
           sassDir: "sass/"
           cssDir: "build/css/"
-          environment: 'production'
+          imageDir: 'img/'
+          environment: 'development'
       dist:
         options:
           sassDir: "sass/"
           cssDir: "build/css/"
-          environment: 'development'
+          imageDir: 'img/'
+          environment: 'production'
     coffee:
       compile:
         options:
@@ -78,19 +80,19 @@ module.exports = (grunt) =>
     watch:
       css:
         files: 'sass/**'
-        tasks: ['compass:dev']
+        tasks: ['compass:compile']
         options:
           spawn: false
           livereload: 35729
       jade:
         files: 'jade/**'
-        tasks: ['jade']
+        tasks: ['jade:compile']
         options:
           spawn: false
           livereload: 35729
       coffee:
         files: 'coffee/**'
-        tasks: ['coffee']
+        tasks: ['coffee:compile']
         options:
           spawn: false
           livereload: 35729
@@ -110,7 +112,6 @@ module.exports = (grunt) =>
       '*.log'
     ]
 
-
   grunt.loadNpmTasks 'grunt-contrib-jade'
   grunt.loadNpmTasks 'grunt-contrib-compass'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
@@ -118,7 +119,6 @@ module.exports = (grunt) =>
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-copy'
-  grunt.loadNpmTasks 'grunt-contrib-clean'
 
   grunt.registerTask 'remake', ['bower:install', 'coffee:compile', 'jade:compile', 'compass:compile', 'copy:dev']
   grunt.registerTask 'make', ['coffee:compile', 'jade:compile', 'compass:compile']
